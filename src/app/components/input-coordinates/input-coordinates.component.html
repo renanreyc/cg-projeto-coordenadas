@@ -1,0 +1,81 @@
+<div>
+    <form [formGroup]="coordinateForm" (ngSubmit)="onFormSubmit()">
+        <div class="world-coordinates group">
+            <h4 class="section-label">World Coordinates:</h4>
+            <div>
+                <div class="row">
+                    <div class="input-coordinate">
+                        <div class="coordinate transformation-coordinate">x-min</div>
+                        <input type="number" placeholder="Min" formControlName="worldXMin" />
+                    </div>
+                    <div class="input-coordinate">
+                        <div class="coordinate transformation-coordinate">x-max</div>
+                        <input type="number" placeholder="Max" formControlName="worldXMax" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-coordinate">
+                        <div class="coordinate transformation-coordinate">y-min</div>
+                        <input type="number" placeholder="Min" formControlName="worldYMin" />
+                    </div>
+                    <div class="input-coordinate">
+                        <div class="coordinate transformation-coordinate">y-max</div>
+                        <input type="number" placeholder="Max" formControlName="worldYMax" />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="normalized-device-coordinate group">
+            <h4 class="section-label">Normalized Range:</h4>
+            <div class="row">
+                <div>
+                    <input type="radio" id="origin" value="origin" formControlName="normalizedRange" />
+                    <label for="origin">0 to 1</label>
+                </div>
+                <div>
+                    <input type="radio" id="center" value="center" formControlName="normalizedRange" />
+                    <label for="center">-1 to 1</label>
+                </div>
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="device-coordinates group">
+            <h4 class="section-label">Device Size:</h4>
+            <div class="row">
+                <div class="input-coordinate">
+                    <div class="coordinate transformation-coordinate">Width</div>
+                    <input type="number" placeholder="Width" formControlName="deviceX" />
+                </div>
+                <div class="input-coordinate">
+                    <div class="coordinate transformation-coordinate">Height</div>
+                    <input type="number" placeholder="Height" formControlName="deviceY" />
+                </div>
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="point-coordinates group">
+            <h4 class="section-label">Point Coordinates:</h4>
+            <div class="row">
+                <div class="input-coordinate">
+                    <div class="coordinate">x</div>
+                    <input type="number" placeholder="Value" formControlName="pointX" />
+                </div>
+                <div class="input-coordinate">
+                    <div class="coordinate">y</div>
+                    <input type="number" placeholder="Value" formControlName="pointY" />
+                </div>
+            </div>
+        </div>
+
+        <div class="action">
+            <button class="button">TRANSFORM</button>
+        </div>
+    </form>
+</div>

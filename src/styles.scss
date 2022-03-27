@@ -1,0 +1,72 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap');
+
+@import 'bulma/bulma.sass';
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    padding: 0;
+    margin: 0;
+    min-height: 100%;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+input {
+    font-family: 'Open Sans', sans-serif;
+    padding: 10px;
+}
+
+.input-coordinate {
+    display: flex;
+
+    padding: 0;
+    margin: 5px;
+
+    input {
+        margin: 0;
+        border-radius: 0;
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+
+        border: 1px solid #ff7d00;
+        border-left: none;
+
+        font-weight: 600;
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+    .transformation-coordinate {
+        width: 66px !important;
+    }
+
+    .coordinate {
+        width: 35px;
+        height: inherit;
+        color: white;
+        font-weight: bold;
+        background-color: #ff7d00;
+        border: 1px solid #ff7d00;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+    }
+}
+
+.section-label {
+    margin: 5px;
+    color: #7b7777;
+}

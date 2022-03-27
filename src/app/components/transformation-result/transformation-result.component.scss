@@ -1,0 +1,101 @@
+.transformation-result {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+
+    .results {
+        flex: 1;
+
+        .result-table {
+            border-collapse: collapse;
+            margin-bottom: 20px;
+            width: 100%;
+
+            th,
+            td {
+                border: 1px solid #ff7d00;
+                text-align: center;
+            }
+
+            thead {
+                th {
+                    color: white;
+                }
+            }
+
+            thead,
+            tfoot {
+                background-color: #ff7d00;
+                color: #fff;
+            }
+        }
+    }
+
+    .formulas {
+        flex: 1;
+
+        .card {
+            padding: 0;
+            margin-bottom: 10px;
+            border: 1px solid #ff7d00;
+            text-align: center;
+
+            .title {
+                display: flex;
+                padding: 12px;
+                background-color: #ff7d00;
+                margin-bottom: 0px;
+
+                span {
+                    flex: 1;
+                    color: white;
+                    font-size: 16px;
+                }
+            }
+
+            table {
+                margin: 0px;
+            }
+
+            hr {
+                height: 1px;
+                background-color: #dbdbdb;
+                margin: 0px 10px;
+            }
+        }
+
+        .math-table {
+            display: flex;
+            justify-content: center;
+
+            td {
+                text-align: center;
+                border: none;
+            }
+
+            .bottom-line {
+                border-bottom: 1px solid grey;
+            }
+        }
+
+        .formula {
+            padding: 10px 0px;
+            font-style: italic;
+            color: grey;
+
+            hr {
+                border-top: 1px solid #ff7d00;
+                margin: 20px 0px;
+            }
+
+            p {
+                padding: 0;
+                margin: 0;
+            }
+
+            &.no-padding {
+                padding: 0px;
+            }
+        }
+    }
+}

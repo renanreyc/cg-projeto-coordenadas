@@ -1,0 +1,139 @@
+<div class="transformation-result">
+    <div class="results">
+        <table class="result-table">
+            <thead>
+                <tr>
+                    <th colspan="2">Normalized Range</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>ndc<sub>min</sub></td>
+                    <td>ndc<sub>max</sub></td>
+                </tr>
+                <tr>
+                    <td>{{ range[0] }}</td>
+                    <td>{{ range[1] }}</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <table class="result-table">
+            <thead>
+                <tr>
+                    <th colspan="2">Device Size Result</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>x</td>
+                    <td>y</td>
+                </tr>
+                <tr>
+                    <td>{{ dc.x }}</td>
+                    <td>{{ dc.y }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="formulas">
+        <div class="card">
+            <div class="title">
+                <span><b>Transformation: World to Normalized</b></span>
+            </div>
+
+            <!-- Formulas -->
+
+            <!-- X -->
+            <table class="math-table formula">
+                <tbody>
+                    <tr>
+                        <td rowspan="2">ndcx =</td>
+                        <td rowspan="2">(ndc<sub>max</sub> - ndc<sub>min</sub>) *</td>
+                        <td class="bottom-line">x - x<sub>min</sub></td>
+                        <td rowspan="2">+ ndc<sub>min</sub></td>
+                    </tr>
+                    <tr>
+                        <td>x<sub>max</sub> - x<sub>min</sub></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <hr />
+
+            <!-- Y -->
+            <table class="math-table formula">
+                <tbody>
+                    <tr>
+                        <td rowspan="2">ndcy =</td>
+                        <td rowspan="2">(ndc<sub>max</sub> - ndc<sub>min</sub>) *</td>
+                        <td class="bottom-line">y - y<sub>min</sub></td>
+                        <td rowspan="2">+ ndc<sub>min</sub></td>
+                    </tr>
+                    <tr>
+                        <td>x<sub>max</sub> - x<sub>min</sub></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div *ngIf="showCalculation" class="formula no-padding">
+                <hr />
+            </div>
+
+            <!-- Calculation -->
+
+            <!-- X -->
+            <table *ngIf="showCalculation" class="math-table formula">
+                <tbody>
+                    <tr>
+                        <td rowspan="2">{{ ndc.x.toFixed(2) }} =</td>
+                        <td rowspan="2">{{ range[1] - range[0] }} *</td>
+                        <td class="bottom-line">{{ point.x }} - {{ world.x.min }}</td>
+                        <td rowspan="2">+ {{ range[0] }}</td>
+                    </tr>
+                    <tr>
+                        <td>{{ world.x.max }} - {{ world.x.min }}</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div *ngIf="showCalculation">
+                <hr />
+            </div>
+
+            <!-- Y -->
+            <table *ngIf="showCalculation" class="math-table formula">
+                <tbody>
+                    <tr>
+                        <td rowspan="2">{{ ndc.y.toFixed(2) }} =</td>
+                        <td rowspan="2">{{ range[1] - range[0] }} *</td>
+                        <td class="bottom-line">{{ point.y }} - {{ world.y.min }}</td>
+                        <td rowspan="2">+ {{ range[0] }}</td>
+                    </tr>
+                    <tr>
+                        <td>{{ world.y.max }} - {{ world.y.min }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="card">
+            <div class="title">
+                <span><b>Transformation: Normalized to Device</b></span>
+            </div>
+
+            <div class="formula">
+                <!-- Formula -->
+                <p>dcx = round(ndcx * (ndh - 1))</p>
+                <p>dcy = round(ndcy * (ndv - 1))</p>
+
+                <hr *ngIf="showCalculation" />
+
+                <!-- Calculation -->
+                <p *ngIf="showCalculation">{{ dc.x }} = round({{ ndc.x.toFixed(2) }} * ({{ device.x.max }} - 1))</p>
+                <p *ngIf="showCalculation">{{ dc.y }} = round({{ ndc.y.toFixed(2) }} * ({{ device.y.max }} - 1))</p>
+            </div>
+        </div>
+    </div>
+</div>

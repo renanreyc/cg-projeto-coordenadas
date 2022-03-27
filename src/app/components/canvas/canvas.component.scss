@@ -1,0 +1,9 @@
+canvas {
+    border: 1px solid #ff0000;
+}
+
+:host {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

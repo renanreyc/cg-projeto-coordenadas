@@ -1,0 +1,41 @@
+label {
+    margin-right: 10px;
+}
+
+.row {
+    display: flex;
+}
+
+.action {
+    display: flex;
+    justify-content: center;
+    margin: 20px 5px;
+
+    button {
+        width: 100%;
+        color: #ec561a;
+        background-color: white;
+        border-radius: 5px;
+        border: 1px solid #ec561a;
+        margin-right: 60px;
+
+        &:hover {
+            color: white;
+            background-color: #ec561a;
+        }
+    }
+}
+
+.normalized-device-coordinate {
+    .row {
+        margin: 0px 5px;
+
+        div:last-child {
+            margin-left: 10px;
+        }
+
+        label {
+            margin-left: 10px;
+        }
+    }
+}
