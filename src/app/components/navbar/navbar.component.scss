@@ -1,8 +1,5 @@
 .navbar {
     .navbar-brand {
-        display: flex;
-        align-items: center;
-
         img {
             width: 52px;
             height: 52px;
@@ -11,6 +8,8 @@
 
         span {
             font-size: 34px;
+            text-align: center;
+            margin: 10px;
         }
     }
 
@@ -19,12 +18,27 @@
         padding: 10px;
 
         &.active {
-            color: #ff7d00;
+            color: #533263;
         }
 
         &:hover {
-            color: #ff7d00;
-            background-color: #fffaf0;
+            color: #533263;
+            background-color: rgba(128, 128, 128, 0.040);
         }
     }
+
+    .navbar-end {
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    width: 15vw;
+    height: 95vh;
+    display: flex;
+    flex-direction: column;
+
+    border-right: 1px solid #ddd;
 }

@@ -1,5 +1,7 @@
 .app-container {
     margin-top: 25px;
+    display: flex;
+    flex-direction: row;
 }
 
 .divider {
@@ -11,4 +13,8 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+}
+
+.content-padding {
+    padding: 5vh 2vw;
 }
