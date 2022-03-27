@@ -68,7 +68,7 @@ export class CanvasComponent implements OnInit, AfterViewInit {
     public drawPixel(point: Point): void {
         const { x, y } = point;
         this.canvasContext.fillStyle = 'black';
-        this.canvasContext.fillRect(x, y, 3, 3);
+        this.canvasContext.fillRect(x, y, 1, 1);
     }
 
     public drawFractalTree(startX: number, startY: number, len: number, angle: number, branchWidth: number): void {
@@ -77,8 +77,8 @@ export class CanvasComponent implements OnInit, AfterViewInit {
         this.canvasContext.beginPath();
         this.canvasContext.save();
 
-        this.canvasContext.strokeStyle = 'green';
-        this.canvasContext.fillStyle = 'green';
+        this.canvasContext.strokeStyle = 'purple';
+        this.canvasContext.fillStyle = 'purple';
 
         this.canvasContext.translate(startX, startY);
         this.canvasContext.rotate((angle * Math.PI) / 180);
@@ -127,7 +127,7 @@ export class CanvasComponent implements OnInit, AfterViewInit {
         const screenBackgroundRender = (a: number): void => {
             this.canvasContext.beginPath();
 
-            this.canvasContext.fillStyle = `rgba( 20, 20, 20, ${a} )`;
+            this.canvasContext.fillStyle = `rgba(20, 20, 20, ${a} )`;
             this.canvasContext.fillRect(screenLeft, screenTop, screenWidth, screenHeight);
 
             this.canvasContext.closePath();
